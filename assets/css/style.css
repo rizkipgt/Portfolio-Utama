@@ -9,11 +9,30 @@
 /*-----------------------------------*\
  * #CUSTOM PROPERTY
 \*-----------------------------------*/
+
+@import url("https://fonts.googleapis.com/css2?family=poppins:wght@300;400;500;600;700;800;900&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   list-style: none;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  scroll-behavior: smooth;
+  font-family: "poppins", sans-serif;
+}
+
+* {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
 }
 
 :root {
@@ -27,6 +46,10 @@
   --black: hsl(0, 0%, 0%);
   --white: hsl(0, 0%, 100%);
 
+  --bg-color: #000;
+  --second-bg-color: #000;
+  --text-color: #fff;
+  --main-color: #e38445;
   /**
    * typography
    */
@@ -182,7 +205,7 @@ html {
 body {
   background: var(--bg-primary);
   transition: var(--transition-1);
-  color: var();
+  color: #fff;
 }
 
 body.active {
@@ -1474,4 +1497,147 @@ textarea.input-field {
   .about-banner {
     max-width: 450px;
   }
+}
+
+.portfolio h2 {
+  margin-bottom: 4rem;
+}
+.portfolio-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  gap: 2.5rem;
+}
+.portfolio-container .portfolio-box {
+  position: relative;
+  border-radius: 2rem;
+  box-shadow: 0 0 1rem #e38445;
+  overflow: hidden;
+  display: flex;
+}
+.portfolio-box img {
+  width: 100%;
+  transition: 0.5s ease;
+}
+.portfolio-box:hover img {
+  transform: scale(1.1);
+}
+.portfolio-box .portfolio-layer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(228, 35, 35, 0.1), var(--main-color));
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 0 4rem;
+  transform: translateY(100%);
+  transition: 0.5s ease;
+}
+.portfolio-box:hover .portfolio-layer {
+  transform: translateY(0);
+}
+.portfolio-layer h4 {
+  font-size: 0.1rem;
+}
+.portfolio-layer p {
+  font-size: 1.6rem;
+  margin: 0.3rem 0 1rem;
+}
+.portfolio-layer a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 3rem;
+  height: 3rem;
+  background: var(--text-color);
+  border-radius: 50%;
+}
+/* .portfolio-layer a i {
+  font-size: 2rem;
+  color: black);
+} */
+
+.heading {
+  position: relative;
+  font-size: 3rem;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+@media (max-width: 991px) {
+  .portfolio {
+    padding-bottom: 7rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .portfolio h2 {
+    margin-bottom: 3rem;
+  }
+
+  .portfolio-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 617px) {
+  .portfolio-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  html {
+    font-size: 50%;
+  }
+}
+
+/* html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+} */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #e38445;
+  border-radius: 2px;
+  border: 2px solid #e5c2ab;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a10;
+}
+
+*::selection {
+  background-color: transparent;
+}
+
+img {
+  overflow-clip-margin: content-box;
+  overflow: clip;
+}
+
+.bx {
+  font-family: boxicons !important;
+  font-weight: 400;
+  font-style: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-rendering: auto;
+  display: inline-block;
+  text-transform: none;
+  speak: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.bx-link-external:before {
+  content: "\eb3e";
 }
