@@ -810,7 +810,7 @@ main {
 }
 
 .load-more {
-  font-size: var(--fs-4);
+  font-size: var(--fs-5);
   color: var(--raw-seinna);
   text-decoration: underline;
   margin-inline: auto;
